@@ -21,4 +21,10 @@ func TestSomethingInMyDatastore(t *testing.T) {
 	if _, err = datastore.Put(c, datastore.NewIncompleteKey(c, "Something", nil), &sth); err != nil {
 		t.Fatal(err)
 	}
+	q := datastore.NewQuery("Something")
+	var sths []Something
+	_, err = q.GetAll(c, &sths)
+	if len(sths) != 1 {
+		t.Errorf("len(somethings): expected: 1, actual: %d\n", len(sths))
+	}
 }
