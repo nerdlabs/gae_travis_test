@@ -1,6 +1,7 @@
 package Gtt
 
 import (
+	"log"
 	"testing"
 	"time"
 
@@ -29,4 +30,8 @@ func TestSomethingInMyDatastore(t *testing.T) {
 	if len(sths) != 1 {
 		t.Errorf("len(somethings): expected: 1, actual: %d\n", len(sths))
 	}
+}
+
+func TestThatThisNotWillFailAndBlockThePullRequest(t *testing.T) {
+	log.Printf("I love to fail!^Wsucceeeeeed!\n")
 }
