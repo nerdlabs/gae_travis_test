@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-goapp test
+./go_appengine/goapp test
