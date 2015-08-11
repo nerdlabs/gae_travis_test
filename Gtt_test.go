@@ -2,6 +2,7 @@ package Gtt
 
 import (
 	"testing"
+	"time"
 
 	"appengine/aetest"
 	"appengine/datastore"
@@ -21,6 +22,7 @@ func TestSomethingInMyDatastore(t *testing.T) {
 	if _, err = datastore.Put(c, datastore.NewIncompleteKey(c, "Something", nil), &sth); err != nil {
 		t.Fatal(err)
 	}
+	time.Sleep(1 * time.Second)
 	q := datastore.NewQuery("Something")
 	var sths []Something
 	_, err = q.GetAll(c, &sths)
