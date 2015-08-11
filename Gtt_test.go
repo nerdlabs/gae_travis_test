@@ -30,3 +30,7 @@ func TestSomethingInMyDatastore(t *testing.T) {
 		t.Errorf("len(somethings): expected: 1, actual: %d\n", len(sths))
 	}
 }
+
+func TestThatThisWillFailAndBlockThePullRequest(t *testing.T) {
+	t.Errorf("I love to fail!\n")
+}
