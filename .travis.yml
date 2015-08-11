@@ -2,5 +2,5 @@ language: go
 go:
   - 1.2.1
 
-script:
-  - go test -v ./...
+install: ./.travis_install.sh
+script: ./.travis_script.sh
